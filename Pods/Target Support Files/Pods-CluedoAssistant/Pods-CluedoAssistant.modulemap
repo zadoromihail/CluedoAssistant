@@ -1,0 +1,6 @@
+framework module Pods_CluedoAssistant {
+  umbrella header "Pods-CluedoAssistant-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8736D43925594EC40004A1C1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736D43825594EC40004A1C1 /* Card.swift */; };
+		8736D4482559A27D0004A1C1 /* TestCl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736D4472559A27D0004A1C1 /* TestCl.swift */; };
+		8736D44C255A8CDE0004A1C1 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736D44A255A8CDE0004A1C1 /* SuggestionViewController.swift */; };
+		8736D44D255A8CDE0004A1C1 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8736D44B255A8CDE0004A1C1 /* SuggestionViewController.xib */; };
+		8736D453255BE1520004A1C1 /* OtherSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736D451255BE1520004A1C1 /* OtherSuggestionViewController.swift */; };
+		8736D454255BE1520004A1C1 /* OtherSuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8736D452255BE1520004A1C1 /* OtherSuggestionViewController.xib */; };
+		875DF57C25569456000F52F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF57B25569456000F52F6 /* AppDelegate.swift */; };
+		875DF57E25569456000F52F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF57D25569456000F52F6 /* SceneDelegate.swift */; };
+		875DF5852556945A000F52F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5842556945A000F52F6 /* Assets.xcassets */; };
+		875DF5882556945A000F52F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5862556945A000F52F6 /* LaunchScreen.storyboard */; };
+		875DF591255694DE000F52F6 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF590255694DE000F52F6 /* Room.swift */; };
+		875DF59525569611000F52F6 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF59425569611000F52F6 /* Weapon.swift */; };
+		875DF59825569805000F52F6 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF59725569805000F52F6 /* Hero.swift */; };
+		875DF59B25569898000F52F6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF59A25569898000F52F6 /* Person.swift */; };
+		875DF59F255698FD000F52F6 /* Hearing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF59E255698FD000F52F6 /* Hearing.swift */; };
+		875DF5A225569B0A000F52F6 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF5A125569B0A000F52F6 /* CardType.swift */; };
+		875DF5A82556B51C000F52F6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF5A62556B51C000F52F6 /* StartViewController.swift */; };
+		875DF5A92556B51C000F52F6 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5A72556B51C000F52F6 /* StartViewController.xib */; };
+		875DF5AD2556BC3A000F52F6 /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF5AB2556BC3A000F52F6 /* MyCardsViewController.swift */; };
+		875DF5AE2556BC3A000F52F6 /* MyCardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5AC2556BC3A000F52F6 /* MyCardsViewController.xib */; };
+		875DF5B52556BC86000F52F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF5B32556BC86000F52F6 /* ViewController.swift */; };
+		875DF5B62556BC86000F52F6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5B42556BC86000F52F6 /* ViewController.xib */; };
+		875DF5DD2556D236000F52F6 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF5DB2556D236000F52F6 /* CardCell.swift */; };
+		875DF5DE2556D236000F52F6 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5DC2556D236000F52F6 /* CardCell.xib */; };
+		9CECF9EDFB35BAD2C5B3D4B1 /* Pods_CluedoAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74C5022DAB49053F0F602AE /* Pods_CluedoAssistant.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D2A517ECC0977A726D76C81 /* Pods-CluedoAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CluedoAssistant.debug.xcconfig"; path = "Target Support Files/Pods-CluedoAssistant/Pods-CluedoAssistant.debug.xcconfig"; sourceTree = "<group>"; };
+		8736D43825594EC40004A1C1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		8736D4472559A27D0004A1C1 /* TestCl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCl.swift; sourceTree = "<group>"; };
+		8736D44A255A8CDE0004A1C1 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		8736D44B255A8CDE0004A1C1 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
+		8736D451255BE1520004A1C1 /* OtherSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSuggestionViewController.swift; sourceTree = "<group>"; };
+		8736D452255BE1520004A1C1 /* OtherSuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherSuggestionViewController.xib; sourceTree = "<group>"; };
+		875DF57825569456000F52F6 /* CluedoAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CluedoAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		875DF57B25569456000F52F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		875DF57D25569456000F52F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		875DF5842556945A000F52F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		875DF5872556945A000F52F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		875DF5892556945A000F52F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		875DF590255694DE000F52F6 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		875DF59425569611000F52F6 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		875DF59725569805000F52F6 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		875DF59A25569898000F52F6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		875DF59E255698FD000F52F6 /* Hearing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hearing.swift; sourceTree = "<group>"; };
+		875DF5A125569B0A000F52F6 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		875DF5A62556B51C000F52F6 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		875DF5A72556B51C000F52F6 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		875DF5AB2556BC3A000F52F6 /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
+		875DF5AC2556BC3A000F52F6 /* MyCardsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCardsViewController.xib; sourceTree = "<group>"; };
+		875DF5B32556BC86000F52F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		875DF5B42556BC86000F52F6 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		875DF5DB2556D236000F52F6 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		875DF5DC2556D236000F52F6 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		A4C86A425BD46EA0F5A78D7B /* Pods-CluedoAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CluedoAssistant.release.xcconfig"; path = "Target Support Files/Pods-CluedoAssistant/Pods-CluedoAssistant.release.xcconfig"; sourceTree = "<group>"; };
+		C74C5022DAB49053F0F602AE /* Pods_CluedoAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CluedoAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		875DF57525569456000F52F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CECF9EDFB35BAD2C5B3D4B1 /* Pods_CluedoAssistant.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A06646E939F456EC0F64639 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C74C5022DAB49053F0F602AE /* Pods_CluedoAssistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8736D44F255A8CE70004A1C1 /* SuggestionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8736D44A255A8CDE0004A1C1 /* SuggestionViewController.swift */,
+				8736D44B255A8CDE0004A1C1 /* SuggestionViewController.xib */,
+			);
+			path = SuggestionViewController;
+			sourceTree = "<group>";
+		};
+		8736D456255BE1560004A1C1 /* OtherSuggestionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8736D451255BE1520004A1C1 /* OtherSuggestionViewController.swift */,
+				8736D452255BE1520004A1C1 /* OtherSuggestionViewController.xib */,
+			);
+			path = OtherSuggestionViewController;
+			sourceTree = "<group>";
+		};
+		875DF56F25569456000F52F6 = {
+			isa = PBXGroup;
+			children = (
+				875DF57A25569456000F52F6 /* CluedoAssistant */,
+				875DF57925569456000F52F6 /* Products */,
+				B5BD158F58C4DD68FD8AF541 /* Pods */,
+				3A06646E939F456EC0F64639 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		875DF57925569456000F52F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				875DF57825569456000F52F6 /* CluedoAssistant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		875DF57A25569456000F52F6 /* CluedoAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				875DF5DB2556D236000F52F6 /* CardCell.swift */,
+				875DF5DC2556D236000F52F6 /* CardCell.xib */,
+				8736D4472559A27D0004A1C1 /* TestCl.swift */,
+				875DF57D25569456000F52F6 /* SceneDelegate.swift */,
+				875DF57B25569456000F52F6 /* AppDelegate.swift */,
+				875DF5BA2556BCAE000F52F6 /* Controllers */,
+				875DF593255695F3000F52F6 /* Base */,
+				875DF5842556945A000F52F6 /* Assets.xcassets */,
+				875DF5862556945A000F52F6 /* LaunchScreen.storyboard */,
+				875DF5892556945A000F52F6 /* Info.plist */,
+			);
+			path = CluedoAssistant;
+			sourceTree = "<group>";
+		};
+		875DF593255695F3000F52F6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				875DF590255694DE000F52F6 /* Room.swift */,
+				875DF59425569611000F52F6 /* Weapon.swift */,
+				875DF59725569805000F52F6 /* Hero.swift */,
+				875DF59A25569898000F52F6 /* Person.swift */,
+				875DF59E255698FD000F52F6 /* Hearing.swift */,
+				875DF5A125569B0A000F52F6 /* CardType.swift */,
+				8736D43825594EC40004A1C1 /* Card.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		875DF5B02556BC41000F52F6 /* MyCardsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				875DF5AB2556BC3A000F52F6 /* MyCardsViewController.swift */,
+				875DF5AC2556BC3A000F52F6 /* MyCardsViewController.xib */,
+			);
+			path = MyCardsViewController;
+			sourceTree = "<group>";
+		};
+		875DF5B22556BC54000F52F6 /* StartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				875DF5A62556B51C000F52F6 /* StartViewController.swift */,
+				875DF5A72556B51C000F52F6 /* StartViewController.xib */,
+			);
+			path = StartViewController;
+			sourceTree = "<group>";
+		};
+		875DF5B92556BC9C000F52F6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				875DF5B42556BC86000F52F6 /* ViewController.xib */,
+				875DF5B32556BC86000F52F6 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		875DF5BA2556BCAE000F52F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8736D456255BE1560004A1C1 /* OtherSuggestionViewController */,
+				8736D44F255A8CE70004A1C1 /* SuggestionViewController */,
+				875DF5B02556BC41000F52F6 /* MyCardsViewController */,
+				875DF5B22556BC54000F52F6 /* StartViewController */,
+				875DF5B92556BC9C000F52F6 /* ViewController */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B5BD158F58C4DD68FD8AF541 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D2A517ECC0977A726D76C81 /* Pods-CluedoAssistant.debug.xcconfig */,
+				A4C86A425BD46EA0F5A78D7B /* Pods-CluedoAssistant.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		875DF57725569456000F52F6 /* CluedoAssistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 875DF58C2556945A000F52F6 /* Build configuration list for PBXNativeTarget "CluedoAssistant" */;
+			buildPhases = (
+				0D28035DCFCB587477E9B178 /* [CP] Check Pods Manifest.lock */,
+				875DF57425569456000F52F6 /* Sources */,
+				875DF57525569456000F52F6 /* Frameworks */,
+				875DF57625569456000F52F6 /* Resources */,
+				121400B68F14690C4FF87D41 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CluedoAssistant;
+			productName = CluedoAssistant;
+			productReference = 875DF57825569456000F52F6 /* CluedoAssistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		875DF57025569456000F52F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					875DF57725569456000F52F6 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 875DF57325569456000F52F6 /* Build configuration list for PBXProject "CluedoAssistant" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 875DF56F25569456000F52F6;
+			productRefGroup = 875DF57925569456000F52F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				875DF57725569456000F52F6 /* CluedoAssistant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		875DF57625569456000F52F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				875DF5B62556BC86000F52F6 /* ViewController.xib in Resources */,
+				8736D454255BE1520004A1C1 /* OtherSuggestionViewController.xib in Resources */,
+				875DF5DE2556D236000F52F6 /* CardCell.xib in Resources */,
+				8736D44D255A8CDE0004A1C1 /* SuggestionViewController.xib in Resources */,
+				875DF5AE2556BC3A000F52F6 /* MyCardsViewController.xib in Resources */,
+				875DF5882556945A000F52F6 /* LaunchScreen.storyboard in Resources */,
+				875DF5852556945A000F52F6 /* Assets.xcassets in Resources */,
+				875DF5A92556B51C000F52F6 /* StartViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D28035DCFCB587477E9B178 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CluedoAssistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		121400B68F14690C4FF87D41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CluedoAssistant/Pods-CluedoAssistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CluedoAssistant/Pods-CluedoAssistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CluedoAssistant/Pods-CluedoAssistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		875DF57425569456000F52F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				875DF59825569805000F52F6 /* Hero.swift in Sources */,
+				875DF5A225569B0A000F52F6 /* CardType.swift in Sources */,
+				875DF59525569611000F52F6 /* Weapon.swift in Sources */,
+				875DF57C25569456000F52F6 /* AppDelegate.swift in Sources */,
+				8736D43925594EC40004A1C1 /* Card.swift in Sources */,
+				875DF5AD2556BC3A000F52F6 /* MyCardsViewController.swift in Sources */,
+				875DF5B52556BC86000F52F6 /* ViewController.swift in Sources */,
+				875DF5A82556B51C000F52F6 /* StartViewController.swift in Sources */,
+				875DF59B25569898000F52F6 /* Person.swift in Sources */,
+				875DF591255694DE000F52F6 /* Room.swift in Sources */,
+				875DF59F255698FD000F52F6 /* Hearing.swift in Sources */,
+				875DF57E25569456000F52F6 /* SceneDelegate.swift in Sources */,
+				8736D4482559A27D0004A1C1 /* TestCl.swift in Sources */,
+				875DF5DD2556D236000F52F6 /* CardCell.swift in Sources */,
+				8736D44C255A8CDE0004A1C1 /* SuggestionViewController.swift in Sources */,
+				8736D453255BE1520004A1C1 /* OtherSuggestionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		875DF5862556945A000F52F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				875DF5872556945A000F52F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		875DF58A2556945A000F52F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		875DF58B2556945A000F52F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		875DF58D2556945A000F52F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D2A517ECC0977A726D76C81 /* Pods-CluedoAssistant.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CluedoAssistant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadoromihail.CluedoAssistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		875DF58E2556945A000F52F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4C86A425BD46EA0F5A78D7B /* Pods-CluedoAssistant.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CluedoAssistant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadoromihail.CluedoAssistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		875DF57325569456000F52F6 /* Build configuration list for PBXProject "CluedoAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				875DF58A2556945A000F52F6 /* Debug */,
+				875DF58B2556945A000F52F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		875DF58C2556945A000F52F6 /* Build configuration list for PBXNativeTarget "CluedoAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				875DF58D2556945A000F52F6 /* Debug */,
+				875DF58E2556945A000F52F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 875DF57025569456000F52F6 /* Project object */;
+}
