@@ -10,6 +10,8 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    var playersListViewController = PlayersListViewController()
+    
     let myCardsVC = MyCardsViewController()
     
     let suggestionVC = SuggestionViewController()
@@ -48,21 +50,21 @@ class ViewController: UIViewController {
     
     var players = [Person?]()
     var myCards = [[Card]]()
-    var myPerson: Person?
-    
-    public  var person2: Person?
-    public var person3: Person?
-    public var person4: Person?
-    public  var person5: Person?
-    public  var person6: Person?
-    
-    let card1 = CardType.hero(.blue)
-    let card2 = CardType.room(.diningRoom)
-    let card3 = CardType.weapon(.bit)
-    
-    let unknownCard1 = CardType.unknownCard
-    let unknownCard2 = CardType.unknownCard
-    let unknownCard3 = CardType.unknownCard
+//    var myPerson: Person?
+//
+//    public  var person2: Person?
+//    public var person3: Person?
+//    public var person4: Person?
+//    public  var person5: Person?
+//    public  var person6: Person?
+//
+//    let card1 = CardType.hero(.blue)
+//    let card2 = CardType.room(.diningRoom)
+//    let card3 = CardType.weapon(.bit)
+//
+//    let unknownCard1 = CardType.unknownCard
+//    let unknownCard2 = CardType.unknownCard
+//    let unknownCard3 = CardType.unknownCard
 }
     
 extension ViewController {
@@ -72,7 +74,7 @@ extension ViewController {
         
         setupUI()
         
-        startGame()
+     //   startGame()
         
         suggestionVC.delegate = self
         suggestionVC.playerNotContainCardsDelegate = self
@@ -94,12 +96,12 @@ extension ViewController {
         
         guard myCards.count > 0 else { return }
         
-        myPerson?.selfCards = []
+        players[0]?.selfCards = []
         
         myCards.forEach { section in
             section.forEach { card in
                 if card.isSelected {
-                    myPerson?.selfCards.append(card.cardType)
+                    players[0]?.selfCards.append(card.cardType)
                 }
             }
         }
@@ -178,12 +180,12 @@ extension ViewController {
     
         let alert = UIAlertController(title: "Other Suggestion", message: "Select player, making suggestion", preferredStyle: .actionSheet)
         
-        let actionSheet = players.filter { $0?.name != myPerson?.name }
+        let actionSheet = players.filter { $0?.name !=  players[0]?.name }
       
         actionSheet.forEach { person in
             
             let alertAction = UIAlertAction(title: person?.name, style: .default) { action in
-                self.otherSuggestionVC.user = self.myPerson
+                self.otherSuggestionVC.user = self.players[0]
                 self.otherSuggestionVC.cards = self.suggestion
                 self.otherSuggestionVC.currentPlayer = person
                 self.otherSuggestionVC.players = self.players
@@ -214,11 +216,19 @@ extension ViewController {
             target: self,
             action: #selector(pushMyCardsVC)
         )
+    
+    let viewPlayers = UIBarButtonItem(
+        title: "Игроки",
+        style: .plain,
+        target: self,
+        action: #selector(pushPlayersListVC)
+    )
         
         addPlayer.tintColor = .systemBlue
         setMyCards.tintColor = .systemGreen
+        viewPlayers.tintColor = .orange
         
-        navigationItem.rightBarButtonItems = [addPlayer, setMyCards]
+        navigationItem.rightBarButtonItems = [ addPlayer, setMyCards,viewPlayers]
     }
     
    private func showAlert() {
@@ -234,10 +244,9 @@ extension ViewController {
                 
                 return
             }
-            let player = Person(name: text, cards: [self.unknownCard1, self.unknownCard2, self.unknownCard3])
+            let player = Person(name: text, cards: [])
             
             self.players.append(player)
-            print(self.players.count)
         }
         
         let cancel = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
@@ -296,18 +305,18 @@ extension ViewController {
         }
         
     }
-    
-   private func startGame() {
-        
-        myPerson = Person(name: "Misha", cards: [card1,card2,card3])
-        person2 = Person(name: "Alex", cards: [])
-        person3 = Person(name: "Sasha", cards: [])
-        person4 = Person(name: "Ann", cards: [])
-        person5 = Person(name: "Nasty", cards: [])
-        person6 = Person(name: "Vlad", cards: [])
-        players = [myPerson,person2,person3,person4,person5,person6]
-  
-    }
+//
+//   private func startGame() {
+//
+//        myPerson = Person(name: "Misha", cards: [card1,card2,card3])
+//        person2 = Person(name: "Alex", cards: [])
+//        person3 = Person(name: "Sasha", cards: [])
+//        person4 = Person(name: "Ann", cards: [])
+//        person5 = Person(name: "Nasty", cards: [])
+//        person6 = Person(name: "Vlad", cards: [])
+//        players = [myPerson,person2,person3,person4,person5,person6]
+//
+//    }
     
 
     private func showAlertMessage(message: String) {
@@ -338,9 +347,8 @@ extension ViewController {
     
     private func presentSuggestionVC() {
         
-        suggestionVC.players = [person2,person3,person4,person5,person6]
+        suggestionVC.players = players
         suggestionVC.cards = suggestion
-        print(suggestion.count)
         navigationController?.present(suggestionVC, animated: true, completion: nil)
     }
     
@@ -364,8 +372,13 @@ extension ViewController {
     }
     
     @objc func pushMyCardsVC() {
-        myCardsVC.players = [myPerson,person2,person3,person4,person5,person6]
+        myCardsVC.players = players
         navigationController?.pushViewController(myCardsVC, animated: true)
+    }
+    
+    @objc func pushPlayersListVC() {
+        playersListViewController.players = players
+        navigationController?.pushViewController(playersListViewController, animated: true)
     }
     
     @objc func mySuggestionPressed(sender: UIButton) {
@@ -480,24 +493,9 @@ extension ViewController: SuggestionViewControllerDelegate {
 
 extension ViewController: PlayerCanContainCardsDelegate {
     
-    
-//    func addHearings(player: Person?, cards: [Card]) {
-//        
-//        var hearingArray: [CardType] = []
-//        
-//        cards.forEach {  hearing in
-//            hearingArray.append(hearing.cardType)
-//        }
-//        
-//        player?.hearings.append(hearingArray)
-//    }
-    
-    
-    
     func returnPlayerWithCard(player: Person?, cards: [Card]) {
         
         player?.addHearings(cards: cards)
-        //addHearings(player: player, cards: cards)
      
         cards.forEach { card in
             
@@ -508,42 +506,12 @@ extension ViewController: PlayerCanContainCardsDelegate {
                 player?.canContainCardsArray.append(card.cardType)
             }
         }
-        checkIfSomeCardsNotContain()
-        //checkAllHearingsOfPlayer(player: player)
         
+        checkIfSomeCardsNotContain()
+ 
         players.forEach { player in
             checkHearingContainAllCardsOrLess(player: player)
         }
-        
-        
-        printStatistic()
-    }
-    
-    func printStatistic() {
-     print("///////////////////////////////")
-        players.forEach { player in
-            
-            print("-----------")
-            print(player?.name)
-            print("CAN CONTAIN CARDS")
-            print(player?.canContainCardsArray)
-            print("NOT CONTAIN CARDS")
-            print(player?.notContainCardsArray)
-            print("SELF CARDS")
-            print(player?.selfCards)
-            print(" HEARINGS")
-            
-            player?.hearings.forEach { hearing in
-                hearing.forEach {
-                    print($0.value)
-                }
-            }
-           // print(player?.selfHearings)
-            print("-----------")
-            
-            
-        }
-        
     }
     
     func checkHearingContainAllCardsOrLess(player: Person?) {
@@ -579,8 +547,12 @@ extension ViewController: PlayerCanContainCardsDelegate {
                 print("NEW CARD")
                 
                 player?.selfCards.append(newCardType)
-               
+         
                 replaceCard(newCard: card)
+                
+                guard let safeValues =  player?.canContainCardsArray else { return}
+                
+                player?.canContainCardsArray = safeValues.filter { $0 != newCardType }
                 return
             }
             
@@ -588,88 +560,6 @@ extension ViewController: PlayerCanContainCardsDelegate {
         }
         
     }
-    
-//    func checkAllHearingsOfPlayer(player: Person?) {
-//        player?.selfHearings.forEach {
-//            hearing in
-//            checkHearingContainAllCardsOrLess(player: player, hearing: hearing)
-//        }
-//    }
-    //проблема
-//    func checkHearingContainAllCardsOrLess(player: Person?, hearing: Hearing) {
-//
-//        let hearing = hearing
-//
-//        var decrement = 3
-//
-//        player?.canContainCardsArray.forEach {
-//            card in
-//            print(card.value)
-//            print(hearing.hero?.value)
-//            if (card.value == hearing.hero?.value)  || (card.value == hearing.room?.value) || (card.value == hearing.weapon?.value) {
-//
-//                switch card {
-//
-//                case .hero: hearing.hero = nil
-//                case .room: hearing.room = nil
-//                case .weapon: hearing.weapon = nil
-//
-//                case .unknownCard:
-//                    return
-//                }
-//
-//               decrement = decrement - 1
-//            }
-//        }
-//
-//        if decrement == 1 {
-//
-//
-//            if let cardTypeHero = hearing.hero {
-//
-//                print("Hero Hearing")
-//
-//                var card = Card(cardType: cardTypeHero)
-//                card.isSelected = true
-//                card.owner = player
-//
-//                player?.selfCards.append(cardTypeHero)
-//                replaceCard(newCard: card)
-//            }
-//
-//            if let cardTypeRoom = hearing.room {
-//                print("Room Hearing")
-//
-//                var card = Card(cardType: cardTypeRoom)
-//                card.isSelected = true
-//                card.owner = player
-//
-//                player?.selfCards.append(cardTypeRoom)
-//                replaceCard(newCard: card)
-//            }
-//
-//            if let cardTypeWeapon = hearing.weapon {
-//                print("Weapon Hearing")
-//
-//                var card = Card(cardType: cardTypeWeapon)
-//                card.isSelected = true
-//                card.owner = player
-//
-//                player?.selfCards.append(cardTypeWeapon)
-//                replaceCard(newCard: card)
-//            }
-//
-//        let filtred = player?.selfHearings.filter {  h in
-//
-//                return (h.hero?.value != hearing.hero?.value) &&
-//                    (h.weapon?.value != hearing.weapon?.value) &&
-//                    (h.room?.value != hearing.room?.value)
-//             }
-//            guard let safeFiltred = filtred else { return }
-//
-//            player?.selfHearings = safeFiltred
-//        }
-//    }
     
     func checkIfSomeCardsNotContain() {
         
@@ -689,37 +579,37 @@ extension ViewController: PlayerCanContainCardsDelegate {
                 }
             }
             
-            checkIfOneCardInContainArray(person: person)
+         //   checkIfOneCardInContainArray(person: person)
         }
     }
     
-    func checkIfOneCardInContainArray(person: Person?) {
-        
-        guard var cards = person?.canContainCardsArray else { return }
-        
-        if  cards.count == 1 {
-            person?.selfCards.append(cards[0])
-            
-            myCards.enumerated().forEach {  section in
-                section.element.enumerated().forEach { myCard in
-                    
-                    if myCard.element.cardType == cards[0] {
-                        myCards[section.offset][myCard.offset].owner = person
-                        myCards[section.offset][myCard.offset].isSelected = true
-                        
-                        tableView.reloadData()
-                        
-                        DispatchQueue.main.async {
-                            self.showAlertMessage(message: "Выявлена новая карта: \(myCard.element.cardType.value)")
-                        }
-                    }
-                }
-            }
-            
-            //Очищаем массив предположения
-             cards = []
-        }
-    }
+//    func checkIfOneCardInContainArray(person: Person?) {
+//
+//        guard var cards = person?.canContainCardsArray else { return }
+//
+//        if  cards.count == 1 {
+//            person?.selfCards.append(cards[0])
+//
+//            myCards.enumerated().forEach {  section in
+//                section.element.enumerated().forEach { myCard in
+//
+//                    if myCard.element.cardType == cards[0] {
+//                        myCards[section.offset][myCard.offset].owner = person
+//                        myCards[section.offset][myCard.offset].isSelected = true
+//
+//                        tableView.reloadData()
+//
+//                        DispatchQueue.main.async {
+//                            self.showAlertMessage(message: "Выявлена новая карта: \(myCard.element.cardType.value)")
+//                        }
+//                    }
+//                }
+//            }
+//
+//            //Очищаем массив предположения
+//             cards = []
+//        }
+//    }
 }
 
 extension ViewController: PlayerNotContainCardsDelegate {
@@ -735,6 +625,7 @@ extension ViewController: PlayerNotContainCardsDelegate {
                 player?.notContainCardsArray.append(card.cardType)
             }
         }
+        checkIfSomeCardsNotContain()
     }
 }
 

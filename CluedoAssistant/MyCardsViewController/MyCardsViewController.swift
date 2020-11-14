@@ -25,7 +25,7 @@ class MyCardsViewController: UIViewController {
     
     let tableView = UITableView()
     
-    let maxNumberOfCards = 3
+   let maxNumberOfCards = 7
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -180,7 +180,6 @@ extension MyCardsViewController: UITableViewDelegate {
         
         tableView.reloadData()
         delegate?.myCardsViewController(cards: cardArray )
-       // delegate?.myCardsViewController(cards: selectedCards )
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

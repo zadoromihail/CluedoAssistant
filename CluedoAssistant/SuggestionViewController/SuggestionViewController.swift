@@ -166,7 +166,7 @@ extension SuggestionViewController {
 //
 //    }
     private func setPerson() {
-       
+        players.remove(at: 0)
         currentPlayer = players[0]
         playerNameLabel.text = currentPlayer?.name
     }
@@ -390,12 +390,7 @@ extension SuggestionViewController {
         dismissController()
     }
     
-//    @objc func dismissController() {
-//
-//        cards = []
-//        dismiss(animated: true, completion: nil)
-//
-//    }
+
 }
 
 

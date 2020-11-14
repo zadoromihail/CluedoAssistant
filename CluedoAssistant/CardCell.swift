@@ -38,6 +38,10 @@ class CardCell: UITableViewCell {
         
         cardTextLabel.text = card.cardType.value
         
+        cardTextLabel.textColor = .black
+        
+        cardOwnerLabel.textColor = .black
+        
         var ownerName: String = ""
         
         if card.owner != nil {

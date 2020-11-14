@@ -13,6 +13,8 @@
 		8736D44D255A8CDE0004A1C1 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8736D44B255A8CDE0004A1C1 /* SuggestionViewController.xib */; };
 		8736D453255BE1520004A1C1 /* OtherSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736D451255BE1520004A1C1 /* OtherSuggestionViewController.swift */; };
 		8736D454255BE1520004A1C1 /* OtherSuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8736D452255BE1520004A1C1 /* OtherSuggestionViewController.xib */; };
+		8736D45D255EA3DD0004A1C1 /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736D45C255EA3DD0004A1C1 /* PlayersListViewController.swift */; };
+		8736D461255EC4300004A1C1 /* PlayersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8736D460255EC4300004A1C1 /* PlayersDetailViewController.swift */; };
 		875DF57C25569456000F52F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF57B25569456000F52F6 /* AppDelegate.swift */; };
 		875DF57E25569456000F52F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF57D25569456000F52F6 /* SceneDelegate.swift */; };
 		875DF5852556945A000F52F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5842556945A000F52F6 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		8736D44B255A8CDE0004A1C1 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
 		8736D451255BE1520004A1C1 /* OtherSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSuggestionViewController.swift; sourceTree = "<group>"; };
 		8736D452255BE1520004A1C1 /* OtherSuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherSuggestionViewController.xib; sourceTree = "<group>"; };
+		8736D45C255EA3DD0004A1C1 /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
+		8736D460255EC4300004A1C1 /* PlayersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersDetailViewController.swift; sourceTree = "<group>"; };
 		875DF57825569456000F52F6 /* CluedoAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CluedoAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		875DF57B25569456000F52F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		875DF57D25569456000F52F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		875DF5BA2556BCAE000F52F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8736D45C255EA3DD0004A1C1 /* PlayersListViewController.swift */,
+				8736D460255EC4300004A1C1 /* PlayersDetailViewController.swift */,
 				8736D456255BE1560004A1C1 /* OtherSuggestionViewController */,
 				8736D44F255A8CE70004A1C1 /* SuggestionViewController */,
 				875DF5B02556BC41000F52F6 /* MyCardsViewController */,
@@ -324,6 +330,7 @@
 				875DF5A225569B0A000F52F6 /* CardType.swift in Sources */,
 				875DF59525569611000F52F6 /* Weapon.swift in Sources */,
 				875DF57C25569456000F52F6 /* AppDelegate.swift in Sources */,
+				8736D461255EC4300004A1C1 /* PlayersDetailViewController.swift in Sources */,
 				8736D43925594EC40004A1C1 /* Card.swift in Sources */,
 				875DF5AD2556BC3A000F52F6 /* MyCardsViewController.swift in Sources */,
 				875DF5B52556BC86000F52F6 /* ViewController.swift in Sources */,
@@ -332,6 +339,7 @@
 				875DF591255694DE000F52F6 /* Room.swift in Sources */,
 				875DF59F255698FD000F52F6 /* Hearing.swift in Sources */,
 				875DF57E25569456000F52F6 /* SceneDelegate.swift in Sources */,
+				8736D45D255EA3DD0004A1C1 /* PlayersListViewController.swift in Sources */,
 				8736D4482559A27D0004A1C1 /* TestCl.swift in Sources */,
 				875DF5DD2556D236000F52F6 /* CardCell.swift in Sources */,
 				8736D44C255A8CDE0004A1C1 /* SuggestionViewController.swift in Sources */,
@@ -476,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8265783G3Y;
 				INFOPLIST_FILE = CluedoAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,6 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8265783G3Y;
 				INFOPLIST_FILE = CluedoAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

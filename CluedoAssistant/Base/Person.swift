@@ -13,18 +13,11 @@ class Person {
     
     var selfCards: [CardType] = []
     
-    var selfHearings: [Hearing] = []
-    
     var notContainCardsArray: [CardType] = []
     
     var canContainCardsArray: [CardType] = []
     
     var hearings: [[CardType]] = []
-    
-    func createHearing(hearing: Hearing) {
-        
-        selfHearings.append(hearing)
-    }
     
     func addHearings(cards: [Card]) {
         

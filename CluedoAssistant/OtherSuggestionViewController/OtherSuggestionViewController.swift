@@ -367,47 +367,6 @@ extension OtherSuggestionViewController {
         
     }
     
-//    private func showAlertMessage(message: String) {
-//
-//        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-//
-//        let confirm = UIAlertAction(title: "Понятно", style: .default) { action in
-//            self.dismissController()
-//        }
-//
-//        alert.addAction(confirm)
-//
-//        present(alert, animated: true, completion: nil)
-//
-//    }
-    
-//    func createHearing (cards: [Card]) -> Hearing {
-//
-//        var room: CardType?
-//        var hero: CardType?
-//        var weapon: CardType?
-//
-//        cards.forEach { card in
-//
-//            switch card.cardType {
-//
-//            case .hero : hero = card.cardType
-//
-//            case .weapon : weapon = card.cardType
-//
-//            case .room : room = card.cardType
-//
-//            case .unknownCard:
-//                return
-//            }
-//        }
-//        let hearing = Hearing(room: room, weapon: weapon, hero: hero)
-//
-//        return hearing
-//    }
-    
-    
-    
     @objc func cardShown(sender: UIButton) {
         
         switch sender.tag {
@@ -426,10 +385,4 @@ extension OtherSuggestionViewController {
         
         dismissController()
     }
-    
-//    @objc func dismissController() {
-//
-//        cards = []
-//        dismiss(animated: true, completion: nil)
-//    }
 }
