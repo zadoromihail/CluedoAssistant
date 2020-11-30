@@ -53,8 +53,6 @@ extension MyCardsViewController {
                 roomCardArray.append(card)
             case .weapon:
                 weaponCardArray.append(card)
-            case .unknownCard:
-                return
             }
         }
         

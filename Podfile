@@ -9,5 +9,5 @@ target 'CluedoAssistant' do
  pod 'RxSwift', '6.0.0-rc.1'
  pod 'RxCocoa', '6.0.0-rc.1'
  pod 'SnapKit'
- pod 'SwiftSpreadsheet'
+pod 'SpreadsheetView'
 end

@@ -6,13 +6,13 @@ PODS:
     - RxSwift (= 6.0.0-rc.1)
   - RxSwift (6.0.0-rc.1)
   - SnapKit (5.0.1)
-  - SwiftSpreadsheet (1.2.1)
+  - SpreadsheetView (0.9.1)
 
 DEPENDENCIES:
   - RxCocoa (= 6.0.0-rc.1)
   - RxSwift (= 6.0.0-rc.1)
   - SnapKit
-  - SwiftSpreadsheet
+  - SpreadsheetView
 
 SPEC REPOS:
   trunk:
@@ -20,15 +20,15 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
-    - SwiftSpreadsheet
+    - SpreadsheetView
 
 SPEC CHECKSUMS:
   RxCocoa: a28d75145c07b7547b85faf1e1ad8b25af88a752
   RxRelay: 56abad6d32f73567858506d08735fdb341935b9a
   RxSwift: dae1a32c48148897494b9e2a6b00a68b40694236
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftSpreadsheet: b3dc6d89bd5fd18f38fe88c29898fbc481660a04
+  SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
 
-PODFILE CHECKSUM: ca03787186d92b7e6c58223a1a25bff02d97edc6
+PODFILE CHECKSUM: 3a61f2b3861c84a9c4a6819ec1eadd9a835f9912
 
 COCOAPODS: 1.8.4

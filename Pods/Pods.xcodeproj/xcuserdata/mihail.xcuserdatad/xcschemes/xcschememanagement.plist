@@ -39,7 +39,7 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>SwiftSpreadsheet.xcscheme</key>
+		<key>SpreadsheetView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

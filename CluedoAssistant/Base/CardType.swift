@@ -12,7 +12,6 @@ enum CardType: CaseIterable, Equatable {
     case hero(Hero)
     case weapon(Weapon)
     case room(Room)
-    case unknownCard
     
     static var allCases: [CardType] {
         
@@ -44,7 +43,6 @@ enum CardType: CaseIterable, Equatable {
             .weapon(.rope),
             .weapon(.trophy),
             
-            .unknownCard
         ]
     }
     
@@ -55,8 +53,6 @@ enum CardType: CaseIterable, Equatable {
         case .hero : return String(describing: Hero.self)
         case .room : return String(describing: Room.self)
         case .weapon : return String(describing: Weapon.self)
-        default: return String(describing: self)
-            
         }
     }
 
@@ -115,8 +111,6 @@ enum CardType: CaseIterable, Equatable {
         case .room(.terrace):
             return String(describing: Room.terrace)
 
-        case .unknownCard:
-            return String(describing: self)
         }
     }
 }

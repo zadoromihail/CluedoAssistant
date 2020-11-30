@@ -8,52 +8,108 @@
 import UIKit
 import SnapKit
 
-class StartViewController: UIViewController, UIGestureRecognizerDelegate {
+class StartViewController: BaseViewController {
     
     let detailVC = ViewController()
     
-    let startGameButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(startGame), for: .touchUpInside)
-        button.setTitle("Create Game", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .lightGray
-        return button
-    }()
+    var fields: [PlayerTextField] = []
     
+    var players: [Person] = []
     
-    
-    let textField = UITextField()
-
     let scrollView = UIScrollView()
     
-    let contentView = UIView()
     let mainView = UIView()
+    
+    let contentView = UIView()
     
     let stackView = UIStackView()
     
+    let TextFieldStackViewOne = PlayerStackView()
+    let TextFieldStackViewTwo = PlayerStackView()
+    let TextFieldStackViewThree = PlayerStackView()
+    let TextFieldStackViewFour = PlayerStackView()
+    let TextFieldStackViewFive = PlayerStackView()
     
-
+    let yourPlayerTextField = PlayerTextField()
+    let player2TextField = PlayerTextField()
+    let player3TextField = PlayerTextField()
+    let player4TextField = PlayerTextField()
+    let player5TextField = PlayerTextField()
+    let player6TextField = PlayerTextField()
+    let player7TextField = PlayerTextField()
+    let player8TextField = PlayerTextField()
+    let player9TextField = PlayerTextField()
+    let player10TextField = PlayerTextField()
+    
+//    let startGameButton: UIButton = {
+//
+//        let button = UIButton()
+//        button.addTarget(self, action: #selector( pushVC), for: .touchUpInside)
+//        button.setTitle("Create Game", for: .normal)
+//        button.setTitleColor(.black, for: .normal)
+//        button.backgroundColor = .lightGray
+//
+//        return button
+//    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         setupUI()
     }
     
-    func setupConstraints() {
+    func setupUI() {
+        
+        title = "Настройка игры"
+        
+        view.addSubview(mainView)
+     //   view.addSubview(startGameButton)
+        
+        mainView.addSubview(scrollView)
+        
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(stackView)
+        
+        stackView.addArrangedSubview(TextFieldStackViewOne)
+        stackView.addArrangedSubview(TextFieldStackViewTwo)
+        stackView.addArrangedSubview(TextFieldStackViewThree)
+        stackView.addArrangedSubview(TextFieldStackViewFour)
+        stackView.addArrangedSubview(TextFieldStackViewFive)
+        
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 5
+        
+        setupConstraints()
+        
+        setupTextFields()
+        
+        addGestures()
+        
+        setupBarItems()
+        
+        addTextFieldsToArray()
+    }
+}
 
+extension StartViewController {
+    
+    func setupConstraints() {
+        
         mainView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
-        startGameButton.snp.makeConstraints { make in
-
-            make.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
-            make.height.equalTo(50)
-            make.top.equalTo(mainView.snp.bottom)
-        }
+//        startGameButton.snp.makeConstraints { make in
+//
+//            make.bottom.equalToSuperview()
+//            make.left.right.equalToSuperview()
+//            make.height.equalTo(50)
+//            make.top.equalTo(mainView.snp.bottom)
+//        }
         
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(mainView)
@@ -70,49 +126,12 @@ class StartViewController: UIViewController, UIGestureRecognizerDelegate {
             make.top.equalTo(contentView.snp.top).offset(30)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().inset(10)
-           // make.bottom.equalTo(contentView.snp.bottom)
+
         }
     }
     
-   
-    let TextFieldStackViewOne = PlayerStackView()
-    let TextFieldStackViewTwo = PlayerStackView()
-    let TextFieldStackViewThree = PlayerStackView()
-    let TextFieldStackViewFour = PlayerStackView()
-    let TextFieldStackViewFive = PlayerStackView()
-
-  
-    
-    
-    
-    func addGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(performGesture))
-       
-        tapGesture.numberOfTouchesRequired = 1
-     
-        mainView.addGestureRecognizer(tapGesture)
-        
-        mainView.backgroundColor = .red
-    }
-    
-    @objc func performGesture(_ sender: UITapGestureRecognizer? = nil) {
- 
-        yourPlayerTextField.resignFirstResponder()
-        player2TextField.resignFirstResponder()
-        player3TextField.resignFirstResponder()
-        player4TextField.resignFirstResponder()
-        player5TextField.resignFirstResponder()
-        player6TextField.resignFirstResponder()
-        player7TextField.resignFirstResponder()
-        player8TextField.resignFirstResponder()
-        player9TextField.resignFirstResponder()
-        player10TextField.resignFirstResponder()
-    }
-    
-    var fields: [PlayerTextField] = []
-    var players: [Person] = []
-    
     func addTextFieldsToArray() {
+        
         fields.append(yourPlayerTextField)
         fields.append(player2TextField)
         fields.append(player3TextField)
@@ -124,8 +143,6 @@ class StartViewController: UIViewController, UIGestureRecognizerDelegate {
         fields.append(player9TextField)
         fields.append(player10TextField)
     }
-    
-    
     
     func createPlayers() {
         fields.forEach { field in
@@ -144,69 +161,29 @@ class StartViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    func checkPlayerNameIsEntered() -> Bool {
+        
+        guard let isEmpty = fields.first?.text?.isEmpty else { return false }
+        
+        let returnValue: Bool
+        
+        isEmpty ? (returnValue = false) : (returnValue = true)
+        
+        return returnValue
+    }
+    
     func setupBarItems() {
+        
         let createGame = UIBarButtonItem(
-            title: "Начать игру",
+            title: "Начать",
             style: .plain,
             target: self,
             action: #selector(pushVC)
         )
-            
+        
         createGame.tintColor = .systemBlue
- 
-            navigationItem.rightBarButtonItem = createGame
-    }
-    @objc func pushVC() {
-        createPlayers()
-        detailVC.players = players
-        navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
-    func setupUI() {
-        addGestures()
-        setupBarItems()
-        addTextFieldsToArray()
         
-        title = "Game Setup"
-  
-        view.addSubview(mainView)
-        view.addSubview(startGameButton)
-        
-        mainView.addSubview(scrollView)
-        
-        scrollView.addSubview(contentView)
-        
-        contentView.addSubview(stackView)
-        
-        stackView.addArrangedSubview(TextFieldStackViewOne)
-        stackView.addArrangedSubview(TextFieldStackViewTwo)
-        stackView.addArrangedSubview(TextFieldStackViewThree)
-        stackView.addArrangedSubview(TextFieldStackViewFour)
-        stackView.addArrangedSubview(TextFieldStackViewFive)
-        
-        
-        
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing = 5
-        
-//        leftTextFieldStackView.backgroundColor = .orange
-//        rightTextFieldStackView.backgroundColor = .green
- 
-        
-//        leftTextFieldStackView.spacing = 10
-//        leftTextFieldStackView.distribution = .fillEqually
-        
-  //      rightTextFieldStackView.spacing = 10
-    //    rightTextFieldStackView.distribution = .fillEqually
-        
-//        contentView.backgroundColor = .purple
-//        mainView.backgroundColor = .red
-        
-        
-        setupConstraints()
-        
-        setupTextFields()
+        navigationItem.rightBarButtonItem = createGame
     }
     
     func addPlayersTextFields() {
@@ -225,85 +202,75 @@ class StartViewController: UIViewController, UIGestureRecognizerDelegate {
         
         TextFieldStackViewFive.addArrangedSubview(player9TextField)
         TextFieldStackViewFive.addArrangedSubview(player10TextField)
-    
+        
     }
     
     func setupTextFields() {
         
         addPlayersTextFields()
         
-        yourPlayerTextField.placeholder = "Your Name"
-   
-        player3TextField.placeholder = "Player 3's Name"
+        yourPlayerTextField.placeholder = "Ваше имя"
         
-        player5TextField.placeholder = "Player 5's Name"
+        player3TextField.placeholder = "Имя игрока № 3"
         
-        player7TextField.placeholder = "Player 7's Name"
+        player5TextField.placeholder = "Имя игрока № 5"
         
-        player9TextField.placeholder = "Player 9's Name"
+        player7TextField.placeholder = "Имя игрока № 7"
         
-
-        player2TextField.placeholder = "Player 2's Name"
+        player9TextField.placeholder = "Имя игрока № 9"
         
-        player4TextField.placeholder = "Player 4's Name"
         
-        player6TextField.placeholder = "Player 6's Name"
+        player2TextField.placeholder = "Имя игрока № 2"
         
-        player8TextField.placeholder = "Player 8's Name"
+        player4TextField.placeholder = "Имя игрока № 4"
         
-        player10TextField.placeholder = "Player 10's Name"
+        player6TextField.placeholder = "Имя игрока № 6"
+        
+        player8TextField.placeholder = "Имя игрока № 8"
+        
+        player10TextField.placeholder = "Имя игрока № 10"
         
     }
     
-    let yourPlayerTextField = PlayerTextField()
-    let player2TextField = PlayerTextField()
-    let player3TextField = PlayerTextField()
-    let player4TextField = PlayerTextField()
-    let player5TextField = PlayerTextField()
-    let player6TextField = PlayerTextField()
-    let player7TextField = PlayerTextField()
-    let player8TextField = PlayerTextField()
-    let player9TextField = PlayerTextField()
-    let player10TextField = PlayerTextField()
-    
-    
-    
-    
-    @objc func startGame() {
-        navigationController?.pushViewController(detailVC, animated: true)
+    func addGestures() {
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(performGesture))
+        
+        tapGesture.numberOfTouchesRequired = 1
+        
+        mainView.addGestureRecognizer(tapGesture)
+        
+        mainView.backgroundColor = .red
     }
     
+    @objc func performGesture(_ sender: UITapGestureRecognizer? = nil) {
+        
+        yourPlayerTextField.resignFirstResponder()
+        player2TextField.resignFirstResponder()
+        player3TextField.resignFirstResponder()
+        player4TextField.resignFirstResponder()
+        player5TextField.resignFirstResponder()
+        player6TextField.resignFirstResponder()
+        player7TextField.resignFirstResponder()
+        player8TextField.resignFirstResponder()
+        player9TextField.resignFirstResponder()
+        player10TextField.resignFirstResponder()
+    }
+    
+    @objc func pushVC() {
+        
+        if checkPlayerNameIsEntered() {
+            players = []
+            createPlayers()
+            detailVC.viewModel.players = players
+            
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+        
+        else {
+            showInfoAlertMessage(message: "Укажите свое имя")
+        }
+    }
 }
 
 
-class PlayerTextField: UITextField {
-    
-    override init(frame: CGRect) {
-        
-        super.init(frame: frame)
-        self.backgroundColor = .blue
-        self.layer.cornerRadius = 10
-        self.layer.masksToBounds = true
-        self.heightAnchor.constraint(equalToConstant: 40).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class PlayerStackView: UIStackView {
-    override init(frame: CGRect) {
-        
-        super.init(frame: frame)
-        self.axis = .horizontal
-        self.spacing = 5
-        self.distribution = .fillEqually
-    }
-    
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-}
