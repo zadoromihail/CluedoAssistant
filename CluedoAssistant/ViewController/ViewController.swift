@@ -82,6 +82,7 @@ extension ViewController {
         viewModel.suggestionVC.playerNotContainCardsDelegate = self
         viewModel.otherSuggestionVC.playerNotContainCardsDelegate = self
         viewModel.otherSuggestionVC.playerCanContainCardsDelegate = self
+        viewModel.playerOutOfGameViewController.delegate = self
         viewModel.playersListViewController.delegate = viewModel
         viewModel.playersListViewController.deletePlayerDelegate = viewModel
         viewModel.myCardsVC.delegate = viewModel
@@ -164,13 +165,27 @@ extension ViewController {
             action: #selector(pushPlayersListVC)
         )
         
+        let selectCardsManualy = UIBarButtonItem(
+            title: "Игрок вышел",
+            style: .plain,
+            target: self,
+            action: #selector(playerOutOfGame)
+        )
+        
+        
         setMyCards.tintColor = .systemGreen
         viewPlayers.tintColor = .orange
         
-        navigationItem.rightBarButtonItems = [ setMyCards,viewPlayers]
+        navigationItem.rightBarButtonItems = [ setMyCards,viewPlayers,selectCardsManualy]
         
         navigationItem.setHidesBackButton(true, animated: false)
         
+    }
+    
+    @objc func playerOutOfGame() {
+        viewModel.playerOutOfGameViewController.players = viewModel.players
+        viewModel.playerOutOfGameViewController.cardArray = viewModel.myCards
+        navigationController?.pushViewController(viewModel.playerOutOfGameViewController, animated: true)
     }
     
     private  func replaceCard(newCard: Card) {
@@ -307,9 +322,11 @@ extension ViewController: SuggestionViewControllerDelegate {
         
         let cardOwner = card.owner
         
-        cardOwner?.selfCards.append(card.cardType)
-       
-        replaceCard(newCard: card)
+        LogicManager.checkForDuplicateInSelfCards(player: cardOwner, card: card.cardType) {
+            
+            cardOwner?.selfCards.append(card.cardType)
+            replaceCard(newCard: card)
+        }
     }
 }
 
@@ -317,35 +334,34 @@ extension ViewController: PlayerCanContainCardsDelegate {
     
     func returnPlayerWithCard(player: Person?, cards: [Card]) {
         
-        viewModel.addHearingToPlayer(player:player, cards: cards)
+        LogicManager.addHearingToPlayer(player: player, cards: cards)
         
-        checkIfSomeCardsNotContain()
+        checkCanContainArray()
  
+        replaceCardIfHearingHaveOnlyOneCard()
+    }
+    
+    func replaceCardIfHearingHaveOnlyOneCard() {
+        
         viewModel.players.forEach { player in
             
-            checkHearingContainAllCardsOrLess(player: player)
+            LogicManager.checkHearingContainAllCardsOrLess(player: player) { card in
+                replaceCard(newCard: card)
+            }
         }
     }
     
-    func checkHearingContainAllCardsOrLess(player: Person?) {
+    func checkCanContainArray() {
         
-        viewModel.checkHearingContainAllCardsOrLess(player: player) { card in
+        LogicManager.filterCanContainCardsArray(players: viewModel.players) { person in
             
-            replaceCard(newCard: card)
+            checkIfOnlyOneCardInContainArray(person: person)
         }
     }
     
-    func checkIfSomeCardsNotContain() {
+    func checkIfOnlyOneCardInContainArray(person: Person?) {
         
-        viewModel.checkIfSomeCardsNotContainCard { person in
-            
-            checkIfOneCardInContainArray(person: person)
-        }
-    }
-    
-    func checkIfOneCardInContainArray(person: Person?) {
-        
-        viewModel.checkIfOneCardInContainArray(person: person) { value in
+        LogicManager.checkIfOnlyOneCardInCanContainArray(myCards: viewModel.myCards, person: person) { value in
             
             tableView.reloadData()
 
@@ -360,10 +376,17 @@ extension ViewController: PlayerNotContainCardsDelegate {
     
     func returnPlayer(player: Person?, cards: [Card]) {
         
-        viewModel.returnPlayer(player: player,cards: cards) {
-        
-            checkIfSomeCardsNotContain()
+        LogicManager.checkForDuplicateInNotContainArray(player: player, cards: cards) {
+            checkCanContainArray()
         }
     }
 }
 
+extension ViewController: PlayerOutOfGameViewControllerDelegate {
+    func replaceCardArray(cardArray: [[Card]]) {
+        viewModel.myCards = cardArray
+        tableView.reloadData()
+    }
+    
+    
+}

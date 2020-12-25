@@ -159,7 +159,13 @@ extension SpreadshitViewController: SpreadsheetViewDataSource {
             }
             
             if  canContainCardsArray != nil && canContainCardsArray == true {
-                cell.imageView.image = UIImage(named: "question")
+                if selfCards == false {
+                    cell.imageView.image = UIImage(named: "question")
+                }
+                else {
+                    cell.imageView.image = UIImage(named: "tick")
+                }
+               
             }
             
             if  notContain != nil && notContain == true {

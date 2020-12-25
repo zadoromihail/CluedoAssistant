@@ -43,7 +43,7 @@ class OtherSuggestionViewController: BaseSuggestionViewController {
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Record the other players responses"
+        label.text = "Запишите ответы игроков"
         label.textAlignment = .center
         
         return label
@@ -64,7 +64,7 @@ class OtherSuggestionViewController: BaseSuggestionViewController {
     
     let questionLabel: UILabel = {
         let label = UILabel()
-        label.text = "is asking if"
+        label.text = "спрашивает"
         label.textAlignment = .center
         return label
     }()
@@ -78,7 +78,7 @@ class OtherSuggestionViewController: BaseSuggestionViewController {
     
     let isHoldingLabel: UILabel = {
         let label = UILabel()
-        label.text = "Have"
+        label.text = "есть ли карточка"
         label.textAlignment = .center
         return label
     }()
@@ -92,14 +92,14 @@ class OtherSuggestionViewController: BaseSuggestionViewController {
     
     let cancelButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Cancel", for: .normal)
+        button.setTitle("Отмена", for: .normal)
         
         return button
     }()
     
     let cadrShown: UIButton = {
         let button = UIButton()
-        button.setTitle("Some card ", for: .normal)
+        button.setTitle("Карта показана", for: .normal)
         button.titleLabel?.textAlignment = .center
         button.tag = 0
         
@@ -109,7 +109,7 @@ class OtherSuggestionViewController: BaseSuggestionViewController {
     
     let noCardHelp: UIButton = {
         let button = UIButton()
-        button.setTitle("No Card Help", for: .normal)
+        button.setTitle("Карты не выявлены", for: .normal)
         button.titleLabel?.textAlignment = .center
         button.tag = 1
         return button
@@ -117,7 +117,7 @@ class OtherSuggestionViewController: BaseSuggestionViewController {
     
     let refusedToShow: UIButton = {
         let button = UIButton()
-        button.setTitle("Refused To Show", for: .normal)
+        button.setTitle("Не показано", for: .normal)
         button.titleLabel?.textAlignment = .center
         button.tag = 2
         return button

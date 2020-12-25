@@ -42,7 +42,7 @@ class SuggestionViewController: BaseSuggestionViewController {
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Record the other players responses"
+        label.text = "Запишите ответы игроков"
         label.textAlignment = .center
 
         return label
@@ -50,13 +50,13 @@ class SuggestionViewController: BaseSuggestionViewController {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Your Suggestion"
+        label.text = "Ваша догадка "
         return label
     }()
     
     let questionLabel: UILabel = {
         let label = UILabel()
-        label.text = "You are asking if"
+        label.text = "Вы спрашиваете"
         label.textAlignment = .center
         return label
     }()
@@ -70,7 +70,7 @@ class SuggestionViewController: BaseSuggestionViewController {
     
     let isHoldingLabel: UILabel = {
         let label = UILabel()
-        label.text = "is Holding"
+        label.text = "есть ли карточки"
         label.textAlignment = .center
         return label
     }()
@@ -84,7 +84,7 @@ class SuggestionViewController: BaseSuggestionViewController {
     
     let cancelButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Cancel", for: .normal)
+        button.setTitle("Отмена", for: .normal)
       
         return button
     }()
@@ -117,7 +117,7 @@ class SuggestionViewController: BaseSuggestionViewController {
     
     let noCardHelp: UIButton = {
         let button = UIButton()
-        button.setTitle("No Card Help", for: .normal)
+        button.setTitle("Карты не выявлены", for: .normal)
         button.titleLabel?.textAlignment = .center
         button.tag = 3
         return button
@@ -125,7 +125,7 @@ class SuggestionViewController: BaseSuggestionViewController {
     
     let refusedToShow: UIButton = {
         let button = UIButton()
-        button.setTitle("Refused To Show", for: .normal)
+        button.setTitle("Не показано", for: .normal)
         button.titleLabel?.textAlignment = .center
         button.tag = 4
         return button
@@ -208,13 +208,13 @@ extension SuggestionViewController {
     }
     
     private func setCardButtons() {
-        let firstTitle = cards[0].cardType.value + " shown"
+        let firstTitle = cards[0].cardType.value + " показана"
         firstCardButton.setTitle(firstTitle, for: .normal)
         
-        let secondTitle = cards[1].cardType.value + " shown"
+        let secondTitle = cards[1].cardType.value + " показана"
         secondCardButton.setTitle(secondTitle, for: .normal)
         
-        let thirdTitle = cards[2].cardType.value + " shown"
+        let thirdTitle = cards[2].cardType.value + " показана"
         thirdCardButton.setTitle(thirdTitle, for: .normal)
     }
 

@@ -17,6 +17,8 @@ class ViewControllerViewModel {
     
     let playersListViewController = PlayersListViewController()
     
+    let playerOutOfGameViewController = PlayerOutOfGameViewController()
+    
     let myCardsVC = MyCardsViewController()
     
     let suggestionVC = SuggestionViewController()
@@ -129,7 +131,7 @@ class ViewControllerViewModel {
     
     func presentOtherSuggestion(controller: UIViewController, completion: (UIAlertController) -> () ) {
         
-        let alert = UIAlertController(title: "Other Suggestion", message: "Select player, making suggestion", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Догадка других", message: "Укажите игрока с догадкой", preferredStyle: .actionSheet)
         
         let actionSheet = players.filter { $0?.name != players[0]?.name }
         
@@ -155,142 +157,19 @@ class ViewControllerViewModel {
         completion(alert)
     }
     
-    func replaceCard(newCard: Card,completion: (String) -> () ) {
+    func replaceCard(newCard: Card, completion: (String) -> () ) {
         
         var newCard = newCard
         newCard.isSelected = true
         
-        myCards.enumerated().forEach { section in
+        LogicManager.checkForEqualCardInSelectedArray(equalCard: newCard, selectedArray: myCards) { section, card in
             
-            section.element.enumerated().forEach { card in
-                
-                if card.element.cardType.value == newCard.cardType.value {
-                    myCards[section.offset][card.offset] = newCard
-                }
-            }
-            
+            myCards[section][card] = newCard
         }
         
         let valueToShow = newCard.cardType.value
         
         completion(valueToShow)
-    }
-    
-    func addHearingToPlayer(player: Person?, cards: [Card]) {
-        
-        player?.addHearings(cards: cards)
-        
-        cards.forEach { card in
-            
-            let cardIsExist = player?.canContainCardsArray.contains(card.cardType)
-            
-            if cardIsExist != nil && cardIsExist == false && card.owner == nil {
-                
-                player?.canContainCardsArray.append(card.cardType)
-            }
-        }
-    }
-    
-    func checkIfSomeCardsNotContainCard(completion: (Person?) -> ()) {
-        
-        players.forEach { person in
-            
-            person?.notContainCardsArray.enumerated().forEach { card in
-                
-                let contain = person?.canContainCardsArray.contains(card.element)
-                
-                if contain == true, contain != nil {
-                    
-                    if let filtred = person?.canContainCardsArray.filter({ $0 != card.element}) {
-                        
-                        person?.canContainCardsArray = filtred
-                    }
-                }
-            }
-            completion(person)
-        }
-    }
-    
-    func checkHearingContainAllCardsOrLess(player: Person?, completion: (Card) -> ()) {
-        
-        var increment = 0
-        var filterArray = [CardType]()
-        
-        player?.hearings.enumerated().forEach { section in
-            
-            section.element.forEach { card in
-                
-                guard let contains = player?.canContainCardsArray.contains(card) else { return }
-                
-                if !contains {
-                    
-                    increment = increment + 1
-                    
-                    filterArray.append(card)
-                }
-            }
-            
-            if increment == 2 {
-                
-                let filtered = player?.hearings[section.offset].filter {
-                    
-                    !filterArray.contains($0)
-                }
-                
-                guard let newCardType = filtered?[0] else { return }
-                
-                let card = Card(cardType: newCardType, isSelected: true, markIsShown: false, owner: player)
-                
-                player?.selfCards.append(newCardType)
-                
-                completion(card)
-                
-                guard let safeValues =  player?.canContainCardsArray else { return}
-                
-                player?.canContainCardsArray = safeValues.filter { $0 != newCardType }
-                return
-            }
-            
-            increment = 0
-        }
-    }
-    
-    func checkIfOneCardInContainArray(person: Person?, completion: (String) -> ()) {
-        
-        guard var cards = person?.canContainCardsArray else { return }
-        
-        if  cards.count == 1 {
-            person?.selfCards.append(cards[0])
-            
-            myCards.enumerated().forEach {  section in
-                section.element.enumerated().forEach { myCard in
-                    
-                    if myCard.element.cardType == cards[0] {
-                        myCards[section.offset][myCard.offset].owner = person
-                        myCards[section.offset][myCard.offset].isSelected = true
-                        
-                        let valueToShow = myCard.element.cardType.value
-                        completion(valueToShow)
-                    }
-                }
-            }
-            cards = []
-        }
-    }
-    
-    func returnPlayer(player: Person?, cards: [Card], completion: () -> ()) {
-        
-        cards.forEach { card in
-            
-            let cardIsExist = player?.notContainCardsArray.contains(card.cardType)
-            
-            if cardIsExist != nil && cardIsExist == false {
-                
-                player?.notContainCardsArray.append(card.cardType)
-            }
-        }
-        
-        completion()
     }
 }
 
@@ -305,6 +184,7 @@ extension ViewControllerViewModel: MyCardsViewControllerDelegate {
 extension ViewControllerViewModel: PlayersListViewControllerDelegate {
     
     func removePlayer(player: Person?) {
+        
        players = players.filter { $0?.name != player?.name }
     }
     

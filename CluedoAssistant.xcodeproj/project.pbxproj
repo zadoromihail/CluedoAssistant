@@ -32,10 +32,13 @@
 		875DF5B62556BC86000F52F6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875DF5B42556BC86000F52F6 /* ViewController.xib */; };
 		875DF5DD2556D236000F52F6 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875DF5DB2556D236000F52F6 /* CardCell.swift */; };
 		877A696F2571494E007E8F87 /* MU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A696E2571494E007E8F87 /* MU.swift */; };
+		87A097BB2576DB69008DDD4C /* LogicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A097BA2576DB69008DDD4C /* LogicManager.swift */; };
 		87A2231D2560166100A342A4 /* PlayerStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2231C2560166100A342A4 /* PlayerStackView.swift */; };
 		87A223202560167B00A342A4 /* PlayerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2231F2560167B00A342A4 /* PlayerTextField.swift */; };
 		87A2232325601ABC00A342A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2232225601ABC00A342A4 /* BaseViewController.swift */; };
 		87A2232625601B1200A342A4 /* BaseSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2232525601B1200A342A4 /* BaseSuggestionViewController.swift */; };
+		87AE42822577FF3B00B2E923 /* PlayerOutOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE42812577FF3B00B2E923 /* PlayerOutOfGameViewController.swift */; };
+		87AE42872578050200B2E923 /* PlayerOutOfGameCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE42862578050200B2E923 /* PlayerOutOfGameCardsViewController.swift */; };
 		87EB94292563EFFF009D359F /* SpreadshitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EB94282563EFFF009D359F /* SpreadshitViewController.swift */; };
 		87EB942C2563F004009D359F /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EB942B2563F004009D359F /* Cells.swift */; };
 		87EB943625651A9F009D359F /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EB943525651A9F009D359F /* ViewControllerViewModel.swift */; };
@@ -71,10 +74,13 @@
 		875DF5B42556BC86000F52F6 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		875DF5DB2556D236000F52F6 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		877A696E2571494E007E8F87 /* MU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MU.swift; sourceTree = "<group>"; };
+		87A097BA2576DB69008DDD4C /* LogicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicManager.swift; sourceTree = "<group>"; };
 		87A2231C2560166100A342A4 /* PlayerStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStackView.swift; sourceTree = "<group>"; };
 		87A2231F2560167B00A342A4 /* PlayerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTextField.swift; sourceTree = "<group>"; };
 		87A2232225601ABC00A342A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		87A2232525601B1200A342A4 /* BaseSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSuggestionViewController.swift; sourceTree = "<group>"; };
+		87AE42812577FF3B00B2E923 /* PlayerOutOfGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOutOfGameViewController.swift; sourceTree = "<group>"; };
+		87AE42862578050200B2E923 /* PlayerOutOfGameCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOutOfGameCardsViewController.swift; sourceTree = "<group>"; };
 		87EB94282563EFFF009D359F /* SpreadshitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadshitViewController.swift; sourceTree = "<group>"; };
 		87EB942B2563F004009D359F /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		87EB943525651A9F009D359F /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 				875DF59A25569898000F52F6 /* Person.swift */,
 				875DF59E255698FD000F52F6 /* Hearing.swift */,
 				875DF5A125569B0A000F52F6 /* CardType.swift */,
+				87A097BA2576DB69008DDD4C /* LogicManager.swift */,
 				8736D43825594EC40004A1C1 /* Card.swift */,
 				877A696E2571494E007E8F87 /* MU.swift */,
 			);
@@ -201,6 +208,8 @@
 		875DF5BA2556BCAE000F52F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				87AE42862578050200B2E923 /* PlayerOutOfGameCardsViewController.swift */,
+				87AE42812577FF3B00B2E923 /* PlayerOutOfGameViewController.swift */,
 				87A2232225601ABC00A342A4 /* BaseViewController.swift */,
 				87A2232525601B1200A342A4 /* BaseSuggestionViewController.swift */,
 				8736D45C255EA3DD0004A1C1 /* PlayersListViewController.swift */,
@@ -352,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				875DF59825569805000F52F6 /* Hero.swift in Sources */,
+				87AE42822577FF3B00B2E923 /* PlayerOutOfGameViewController.swift in Sources */,
 				87EB942C2563F004009D359F /* Cells.swift in Sources */,
 				875DF5A225569B0A000F52F6 /* CardType.swift in Sources */,
 				87A2231D2560166100A342A4 /* PlayerStackView.swift in Sources */,
@@ -369,10 +379,12 @@
 				87A223202560167B00A342A4 /* PlayerTextField.swift in Sources */,
 				875DF59B25569898000F52F6 /* Person.swift in Sources */,
 				875DF591255694DE000F52F6 /* Room.swift in Sources */,
+				87AE42872578050200B2E923 /* PlayerOutOfGameCardsViewController.swift in Sources */,
 				875DF59F255698FD000F52F6 /* Hearing.swift in Sources */,
 				875DF57E25569456000F52F6 /* SceneDelegate.swift in Sources */,
 				8736D45D255EA3DD0004A1C1 /* PlayersListViewController.swift in Sources */,
 				875DF5DD2556D236000F52F6 /* CardCell.swift in Sources */,
+				87A097BB2576DB69008DDD4C /* LogicManager.swift in Sources */,
 				87EB943625651A9F009D359F /* ViewControllerViewModel.swift in Sources */,
 				8736D44C255A8CDE0004A1C1 /* SuggestionViewController.swift in Sources */,
 				8736D453255BE1520004A1C1 /* OtherSuggestionViewController.swift in Sources */,
