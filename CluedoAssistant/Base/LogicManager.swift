@@ -22,7 +22,6 @@ class LogicManager {
         }
     }
     
-    
     static func checkIfOnlyOneCardInCanContainArray(myCards: [[Card]], person: Person?, completion: (String) -> ()) {
         
         var myCards = myCards
@@ -51,7 +50,6 @@ class LogicManager {
             cards = []
         }
     }
-    
     
     static  func filterCanContainCardsArray(players: [Person?], completion: (Person?) -> ()) {
         

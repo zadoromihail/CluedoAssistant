@@ -126,8 +126,6 @@ extension PlayersListViewController {
         
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
-       // completion(alert)
-        
     }
     
     private func addPlayerAlert() {

@@ -54,7 +54,6 @@ extension PlayerOutOfGameViewController {
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-
     }
 }
 
@@ -90,7 +89,5 @@ extension PlayerOutOfGameViewController: PlayerOutOfGameCardsViewControllerDeleg
         self.cardArray = cardArray
         tableView.reloadData()
     }
-    
-    
 }
 

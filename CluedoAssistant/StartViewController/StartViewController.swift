@@ -41,17 +41,6 @@ class StartViewController: BaseViewController {
     let player9TextField = PlayerTextField()
     let player10TextField = PlayerTextField()
     
-//    let startGameButton: UIButton = {
-//
-//        let button = UIButton()
-//        button.addTarget(self, action: #selector( pushVC), for: .touchUpInside)
-//        button.setTitle("Create Game", for: .normal)
-//        button.setTitleColor(.black, for: .normal)
-//        button.backgroundColor = .lightGray
-//
-//        return button
-//    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +52,6 @@ class StartViewController: BaseViewController {
         title = "Настройка игры"
         
         view.addSubview(mainView)
-     //   view.addSubview(startGameButton)
         
         mainView.addSubview(scrollView)
         
@@ -102,15 +90,7 @@ extension StartViewController {
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
-//        startGameButton.snp.makeConstraints { make in
-//
-//            make.bottom.equalToSuperview()
-//            make.left.right.equalToSuperview()
-//            make.height.equalTo(50)
-//            make.top.equalTo(mainView.snp.bottom)
-//        }
-        
+    
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(mainView)
         }
@@ -126,7 +106,6 @@ extension StartViewController {
             make.top.equalTo(contentView.snp.top).offset(30)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().inset(10)
-
         }
     }
     
@@ -156,7 +135,6 @@ extension StartViewController {
                     let person = Person(name: text, cards: [])
                     players.append(person)
                 }
-                
             }
         }
     }
@@ -202,7 +180,6 @@ extension StartViewController {
         
         TextFieldStackViewFive.addArrangedSubview(player9TextField)
         TextFieldStackViewFive.addArrangedSubview(player10TextField)
-        
     }
     
     func setupTextFields() {
@@ -219,7 +196,6 @@ extension StartViewController {
         
         player9TextField.placeholder = "Имя игрока № 9"
         
-        
         player2TextField.placeholder = "Имя игрока № 2"
         
         player4TextField.placeholder = "Имя игрока № 4"
@@ -229,7 +205,6 @@ extension StartViewController {
         player8TextField.placeholder = "Имя игрока № 8"
         
         player10TextField.placeholder = "Имя игрока № 10"
-        
     }
     
     func addGestures() {
@@ -240,7 +215,7 @@ extension StartViewController {
         
         mainView.addGestureRecognizer(tapGesture)
         
-        mainView.backgroundColor = .red
+        mainView.backgroundColor = .orange
     }
     
     @objc func performGesture(_ sender: UITapGestureRecognizer? = nil) {

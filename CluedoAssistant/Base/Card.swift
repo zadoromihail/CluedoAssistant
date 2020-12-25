@@ -21,8 +21,4 @@ struct Card: Equatable {
     var markIsShown = false
     
     var owner: Person?
-    
-//    init(cardType: CardType) {
-//        self.cardType = cardType
-//    }
 }

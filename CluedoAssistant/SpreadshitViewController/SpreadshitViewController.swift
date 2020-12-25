@@ -53,7 +53,6 @@ class SpreadshitViewController: UIViewController {
         spreadsheetView.flashScrollIndicators()
         spreadsheetView.reloadData()
     }
-  
 }
 
 // MARK: DataSource
@@ -89,8 +88,6 @@ extension SpreadshitViewController: SpreadsheetViewDataSource {
             return 50
         }
     }
-
-
 
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
         
@@ -186,89 +183,3 @@ extension SpreadshitViewController: SpreadsheetViewDelegate {
         print("Selected: (row: \(indexPath.row), column: \(indexPath.column))")
     }
 }
-
-
-
-
-
-
-
-
-
-//     let start = Int(tasks[indexPath.row - 1][1])!
-
-// if start == indexPath.column - 2 {
-
-   // cell.label.text = tasks[indexPath.row - 1][0]
-
-  //  let colorIndex = Int(tasks[indexPath.row - 1][2])!
-   // cell.color = colors[colorIndex]
-//            } else {
-//                cell.label.text = ""
-//                cell.color = .clear
-//            }
-
-
-
-//    let colors = [UIColor(red: 0.314, green: 0.698, blue: 0.337, alpha: 1),
-//                  UIColor(red: 1.000, green: 0.718, blue: 0.298, alpha: 1),
-//                  UIColor(red: 0.180, green: 0.671, blue: 0.796, alpha: 1)]
-
-//
-//        case (1, 0):
-//            let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: HeaderCell.self), for: indexPath) as! HeaderCell
-//            cell.label.text = "Start"
-//            cell.gridlines.left = .solid(width: 1 / UIScreen.main.scale, color: cell.backgroundColor!)
-//            cell.gridlines.right = cell.gridlines.left
-//            return cell
-
-//        case (2, 0):
-//            let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: HeaderCell.self), for: indexPath) as! HeaderCell
-//            cell.label.text = "Duration"
-//            cell.label.textColor = .gray
-//            cell.gridlines.left = .none
-//            cell.gridlines.right = .default
-//            return cell
-
-
-//        case (1, 2..<(2 + tasks.count)):
-//            let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: TextCell.self), for: indexPath) as! TextCell
-//            cell.label.text = String(format: "April %02d", Int(tasks[indexPath.row - 2][1])!)
-//            cell.gridlines.left = .none
-//            cell.gridlines.right = .none
-//            return cell
-//        case (2, 2..<(2 + tasks.count)):
-//            let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: TextCell.self), for: indexPath) as! TextCell
-//            cell.label.text = tasks[indexPath.row - 2][2]
-//            cell.gridlines.left = .none
-//            cell.gridlines.right = .none
-//            return cell
-
-
-//    func mergedCells(in spreadsheetView: SpreadsheetView) -> [CellRange] {
-//
-//        let titleHeader = [CellRange(from: (0, 0), to: (1, 0)),
-//                           CellRange(from: (0, 1), to: (1, 1)),
-//                           CellRange(from: (0, 2), to: (1, 2))]
-//
-//        let weakHeader = weeks.enumerated().map { (index, _) -> CellRange in
-//            return CellRange(from: (0, index * 7 + 3), to: (0, index * 7 + 9))
-//        }
-//
-//        let charts = tasks.enumerated().map { (index, task) -> CellRange in
-//            let start = Int(task[1])!
-//            let end = Int(task[2])!
-//            return CellRange(from: (index + 2, start + 2), to: (index + 2, start + end + 2))
-//        }
-//
-//        return titleHeader + weakHeader + charts
-//    }
-
-//
-//    func frozenColumns(in spreadsheetView: SpreadsheetView) -> Int {
-//        return 3
-//    }
-//
-//    func frozenRows(in spreadsheetView: SpreadsheetView) -> Int {
-//        return 2
-//    }

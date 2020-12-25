@@ -172,14 +172,12 @@ extension ViewController {
             action: #selector(playerOutOfGame)
         )
         
-        
         setMyCards.tintColor = .systemGreen
         viewPlayers.tintColor = .orange
         
         navigationItem.rightBarButtonItems = [ setMyCards,viewPlayers,selectCardsManualy]
         
         navigationItem.setHidesBackButton(true, animated: false)
-        
     }
     
     @objc func playerOutOfGame() {
@@ -267,7 +265,6 @@ extension ViewController {
         default: return
         }
     }
-    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -387,6 +384,4 @@ extension ViewController: PlayerOutOfGameViewControllerDelegate {
         viewModel.myCards = cardArray
         tableView.reloadData()
     }
-    
-    
 }

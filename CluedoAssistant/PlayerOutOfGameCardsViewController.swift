@@ -34,7 +34,6 @@ class PlayerOutOfGameCardsViewController: UIViewController {
         delegate?.replaceCardArray(cardArray: cardArray)
     }
     
-    
     func unMarkCards() {
         cardArray.enumerated().forEach { section in
             section.element.enumerated().forEach { card in
@@ -44,7 +43,6 @@ class PlayerOutOfGameCardsViewController: UIViewController {
                 cardArray[section.offset][card.offset] = myCard
             }
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,11 +50,9 @@ class PlayerOutOfGameCardsViewController: UIViewController {
         
         unMarkCards()
         
-        
         tableView.reloadData()
     }
 }
-
 
 extension PlayerOutOfGameCardsViewController {
     func setupUI() {
@@ -73,12 +69,8 @@ extension PlayerOutOfGameCardsViewController {
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-
     }
 }
-
-
-
 
 extension PlayerOutOfGameCardsViewController: UITableViewDataSource {
     

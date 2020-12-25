@@ -50,7 +50,6 @@ class CardCell: UITableViewCell {
         
         cardOwnerLabel.text = "Card owner: \(ownerName) "
 
-        
         guard card.isSelected == false else {
             
             backgroundColor = .green
@@ -84,5 +83,4 @@ class CardCell: UITableViewCell {
             make.right.equalTo(cardImageView.snp.left)
         }
     }
-
 }

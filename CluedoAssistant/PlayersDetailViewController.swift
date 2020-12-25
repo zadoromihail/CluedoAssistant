@@ -37,7 +37,6 @@ class PlayersDetailViewController: UIViewController {
     }
 }
 
-
 extension PlayersDetailViewController {
     
     private  func setupUI() {
@@ -108,6 +107,5 @@ extension PlayersDetailViewController: UITableViewDataSource {
             
         default: return "Hero"
         }
-        
     }
 }

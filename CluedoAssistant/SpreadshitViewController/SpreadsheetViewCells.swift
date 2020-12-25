@@ -1,5 +1,5 @@
 //
-//  Cells.swift
+//  SpreadsheetViewCells.swift
 //  SpreadsheetView
 //
 //  Created by Kishikawa Katsumi on 5/8/17.

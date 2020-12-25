@@ -188,7 +188,6 @@ extension ViewControllerViewModel: PlayersListViewControllerDelegate {
        players = players.filter { $0?.name != player?.name }
     }
     
-    
     func addPlayer(player: Person?) {
         
         players.append(player)

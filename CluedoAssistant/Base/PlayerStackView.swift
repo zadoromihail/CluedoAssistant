@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class PlayerStackView: UIStackView {
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
